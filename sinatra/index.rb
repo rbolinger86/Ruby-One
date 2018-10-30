@@ -36,5 +36,7 @@ end
 
 get '/:birthdate' do
  birthdate = params[:birthdate]
- "#{birthdate}"
+ birth_number = birthpath(birthdate)
+ message = get_birth_number(birth_number)
+ "#{message}"
 end
