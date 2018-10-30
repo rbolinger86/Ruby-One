@@ -8,6 +8,7 @@ def birthpath (birthdate)
   number = number[0].to_i+number[1].to_i
 end
 return number
+end
 def get_birth_number (birth_number)
   case birth_number
   when 1
