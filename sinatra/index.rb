@@ -34,6 +34,14 @@ def get_birth_number (birth_number)
   end
 end
 
+get '/' do
+  erb :form
+end
+
+post '/' do
+  "#{params}"
+end
+
 get '/:birthdate' do
  birthdate = params[:birthdate]
  birth_number = birthpath(birthdate)
@@ -44,12 +52,4 @@ end
 get '/newpage' do
   @message = "Hey, what are you doin' here!?"
   erb :newpage
-end
-
-get '/' do
-  erb :form
-end
-
-post '/' do
-  "#{params}"
 end
