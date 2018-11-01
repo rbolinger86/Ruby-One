@@ -42,7 +42,7 @@ post '/' do
   "#{params}"
 end
 
-get '/:birthdate' do
+get '/output' do
  birthdate = params[:birthdate]
  birth_number = birthpath(birthdate)
  @message = get_birth_number(birth_number)
