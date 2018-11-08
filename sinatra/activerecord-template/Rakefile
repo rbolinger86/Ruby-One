@@ -12,7 +12,7 @@ namespace :db do
   desc "Create #{APP_NAME} databases"
   task "create" do
     puts "Creating #{APP_NAME} development and test databases if they don't exist..."
-    system("createdb #{DB_NAME} --username=#{DB_USERNAME} && createdb #{TEST_DB_NAME} --username=#{DB_USERNAME}")
+    system("@SET PGPASSWORD=#{DB_PASSWORD}; createdb --username=#{DB_USERNAME} --password=#{DB_PASSWORD} #{DB_NAME} && @SET PGPASSWORD=#{DB_PASSWORD}; createdb --username=#{DB_USERNAME} --password=#{DB_PASSWORD} #{TEST_DB_NAME}")
   end
 
   desc "Drop #{APP_NAME} databases"
@@ -25,7 +25,7 @@ namespace :db do
   task "migrate" do
     ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
     ActiveRecord::Migration.verbose = true
-    ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths, nil)
+    ActiveRecord::MigrationContext.new("/db/migrate/").migrate
   end
 
   desc "Populate the database with sample data"
