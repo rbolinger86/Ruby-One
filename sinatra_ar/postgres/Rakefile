@@ -25,7 +25,7 @@ namespace :db do
   task "migrate" do
     ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
     ActiveRecord::Migration.verbose = true
-    ActiveRecord::MigrationContext.new("/db/migrate/").migrate
+    ActiveRecord::MigrationContext.new("./db/migrate/").migrate
   end
 
   desc "Populate the database with sample data"
