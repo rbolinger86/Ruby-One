@@ -1,5 +1,5 @@
 class Word
-  def self.find_anagram(string)
+  def self.find_anagrams(string)
     letters = string.split(//)
     anagrams = []
     letters.each do |letter|
