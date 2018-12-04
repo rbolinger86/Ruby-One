@@ -8,6 +8,7 @@ body {
   height: 100vh;
   max-height: 100vh;
   background-attachment: fixed;
+  overflow: hidden;
 }
 h1 {
   color: #ff395d;
@@ -74,11 +75,12 @@ h2 {
 body.results-page {
   background:#f8f8f8;
   background:url('images/tiles-02.png'), url('images/pattern_720.png');
-  background-position: -3vw -10vh, top left;
+  background-position: -3vw -20vh, top left;
   background-repeat: no-repeat, repeat;
   font-family:'montserrat', arial;
-  background-size: 105vw 120vh, auto;
+  background-size: 100vw 140vh, auto;
   background-attachment: fixed;
+  overflow: hidden;
 }
 #more-anagrams {
   text-transform: capitalize;
@@ -102,4 +104,16 @@ body.results-page {
 }
 .extra-links a {
   color: #ff395d;
+}
+li {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40pt;
+  color: #ff395d;
+  font-weight: bold;
+  list-style-type: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
 }
